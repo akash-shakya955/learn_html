@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable1" />
+    <title>Form3</title>
+</head>
+
+<body>
+    <form action="" id="studentForm" name="studentForm" method="get" autocomplete="off">
+
+        <h3>Personal Information</h3>
+
+        <label for="name">First Name:</label>
+        <input type="text" name="f_name" id="name" value="name" required autofocus />
+        <br><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name" value="" />
+        <br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" name="date" id="dob" value="" />?
+
+        <br><br>
+
+        <label for="gender">Gender:</label>
+
+        <select name="gender" id="gender">
+            <option value="Choose a gender">Choose a gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+        </select>
+        <br>
+
+        <h3>Account Information</h3>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="" />
+        <p>(Your email address will be your username)</p>
+
+        <label for="password">password:</label>
+        <input type="password" name="password" id="password" value="" />
+        <p>(Min 8 characters, 1 number, case-sensitive)</p>
+
+        <label for="r_password">Re-type Password</label>
+        <input type="password" name="r_password" id="r_password" value="" />
+        <br><br>
+
+        <label for="security">Security Question:</label>
+        <!-- <input type="text" name="security" id="security" placeholder="Choose a security question" value=""/> -->
+
+        <select name="security" id="security">
+            <option value="Choose a security question">Choose a security question</option>
+            <option value="">What is the CIA Triad in information security, and why is it important?</option>
+            <option value="">What is Two-Factor Authentication (2FA), and how does it enhance security?</option>
+            <option value="">What is a Firewall, and how does it protect networks?</option>
+            <option value="">What are SQL Injection Attacks, and how can they be prevented?</option>
+            <option value="">What is Phishing, and what steps can be taken to avoid it?</option>
+            <option value="">What is the difference between Encryption and Hashing? Provide examples of their use.
+            </option>
+            <option value="">What is Malware? Name different types and their functions.</option>
+            <option value="">What is a DDoS Attack, and how can organizations mitigate it?</option>
+            <option value="">What is Social Engineering, and what are common examples of such attacks?</option>
+            <option value="">What is SSL/TLS, and how does it secure web communication?</option>
+        </select>
+        <br><br>
+
+        <label for="a_security">Security Answear:</label>
+        <input type="text" name="a_security" id="a_security" value="" />
+        <p>(Not case-sensitive)</p>
+
+
+        <h3>Contact Information</h3>
+
+        <label for="address">Address:</label>
+        <input type="text" name="address" id="address" value="" />
+        <br><br>
+
+        <label for="City">City:</label>
+        <input type="text" name="City" id="City" value="" />
+        <br><br>
+
+        <label for="state">State:</label>
+        <!-- <input type="text" name="state" id="state" placeholder="Choose a state" value=""> -->
+
+        <select name="state" id="state">
+
+            <option value="State">Choose a state</option>
+            <option value="Ajmer">Ajmer</option>
+            <option value="Alwar">Alwar</option>
+            <option value="Banswara">Banswara</option>
+            <option value="Baran">Baran</option>
+            <option value="Barmer">Barmer</option>
+            <option value="Bharatpur">Bharatpur</option>
+            <option value="Bhilwara">Bhilwara</option>
+            <option value="Bikaner">Bikaner</option>
+            <option value="Bundi">Bundi</option>
+            <option value="Chittorgarh">Chittorgarh</option>
+            <option value="Churu">Churu</option>
+            <option value="Dausa">Dausa</option>
+            <option value="Dholpur">Dholpur</option>
+            <option value="Dungarpur">Dungarpur</option>
+            <option value="Hanumangarh">Hanumangarh</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Jaisalmer">Jaisalmer</option>
+            <option value="Jalore">Jalore</option>
+            <option value="Jhalawar">Jhalawar</option>
+            <option value="Jhunjhunu">Jhunjhunu</option>
+            <option value="Jodhpur">Jodhpur</option>
+            <option value="Karauli">Karauli</option>
+            <option value="Kota">Kota</option>
+            <option value="Nagaur">Nagaur</option>
+            <option value="Pali">Pali</option>
+            <option value="Pratapgarh">Pratapgarh</option>
+            <option value="Rajsamand">Rajsamand</option>
+            <option value="Sawai Madhopur">Sawai Madhopur</option>
+            <option value="Sikar">Sikar</option>
+            <option value="Sirohi">Sirohi</option>
+            <option value="Sri Ganganagar">Sri Ganganagar</option>
+            <option value="Tonk">Tonk</option>
+            <option value="Udaipur">Udaipur</option>
+        </select>
+        <br><br>
+
+        <label for="zip">Zip Code:</label>
+        <input type="text" name="zip" id="zip" value="" />
+        <input type="text" name="optional" id="optional" placeholder="optional" value="" />
+
+        <br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" name="phone" id="phone" value="" />?
+        <p>No Spaces or dashes</p>
+
+        <input type="number" name="mobile" id="mobile" placeholder="mobile" value="" />
+        <br><br>
+
+        <input type="submit" name="submit" id="submit" value="submit">
+
+    </form>
+
+    <script>
+
+        const params = new URLSearchParams(window.location.search);
+        console.log(params.get("name"));
+
+
+        let form = document.forms.studentForm;
+
+        let name = form.elements.f_name;
+        name.value = params.get("f_name");
+
+
+        let last_name = form.elements.last_name;
+        last_name.value = params.get("last_name");
+
+
+        let date = form.elements.date;
+        date.value = params.get("date");
+
+
+        let gender = form.elements.gender;
+        gender.value = params.get("gender");
+
+
+        let email = form.elements.email;
+        email.value = params.get("email");
+
+
+        let password = form.elements.password;
+        password.value = params.get("password");
+
+
+        let a_security = form.elements.a_security;
+        a_security.value = params.get("a_security");
+
+
+        let address = form.elements.address;
+        address.value = params.get("address");
+
+
+        let City = form.elements.City;
+        City.value = params.get("City");
+
+
+        let zip = form.elements.zip;
+        zip.value = params.get("zip");
+
+
+        let phone = form.elements.phone;
+        phone.value = params.get("phone");
+
+
+        let mobile = form.elements.mobile;
+        mobile.value = params.get("mobile");
+
+
+        let submit = form.elements.submit;
+        submit.value = params.get("submit");
+
+
+
+        console.log(name.type);
+        console.log(name.name);
+        console.log(name.id);
+        console.log(name.value);
+        console.log(name.required);
+        console.log(name.autofocus);
+
+
+        console.log(last_name.type);
+        console.log(last_name.name);
+        console.log(last_name.id);
+        console.log(last_name.value);
+
+
+
+        console.log(date.type);
+        console.log(date.name);
+        console.log(date.id);
+        console.log(date.value);
+
+
+        console.log(gender.name);
+        console.log(gender.id);
+
+
+        console.log(email.type);
+        console.log(email.name);
+        console.log(email.id);
+        console.log(email.value);
+
+
+        console.log(password.type);
+        console.log(password.name);
+        console.log(password.id);
+        console.log(password.value);
+
+
+        console.log(a_security.type);
+        console.log(a_security.id);
+        console.log(a_security.name);
+        console.log(a_security.value);
+
+
+        console.log(address.type);
+        console.log(address.name);
+        console.log(address.id);
+        console.log(address.value);
+
+
+        console.log(City.type);
+        console.log(City.name);
+        console.log(City.id);
+        console.log(City.value);
+
+
+        console.log(state.name);
+        console.log(state.id);
+
+
+        console.log(zip.type);
+        console.log(zip.name);
+        console.log(zip.id);
+        console.log(zip.value);
+
+
+        console.log(phone.type);
+        console.log(phone.name);
+        console.log(phone.id);
+        console.log(phone.value);
+
+
+
+        console.log(mobile.type);
+        console.log(mobile.name);
+        console.log(mobile.id);
+        console.log(mobile.placeholder);
+        console.log(mobile.value);
+
+
+        console.log(submit.type);
+        console.log(submit.name);
+        console.log(submit.id);
+        console.log(submit.value);
+
+    </script>
+</body>
+
+</html>
